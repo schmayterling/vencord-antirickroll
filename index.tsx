@@ -8,8 +8,9 @@ import { addMessageAccessory, removeMessageAccessory } from "@api/MessageAccesso
 import { definePluginSettings } from "@api/Settings";
 import { getUserSettingLazy } from "@api/UserSettings";
 import ErrorBoundary from "@components/ErrorBoundary";
+import { Text } from "@components/Text";
 import definePlugin, { OptionType } from "@utils/types";
-import { React, Text } from "@webpack/common";
+import { React } from "@webpack/common";
 import type { Message } from "discord-types/general";
 
 import { knownHosts } from "./knownHosts";
@@ -188,7 +189,7 @@ function RickrollWarning({
 
     return (
         <div>
-            <Text color="text-danger" variant="text-xs/semibold">
+            <Text size="xs" weight="semibold" style={{ color: "var(--text-danger)" }}>
                 ⚠️ This link is{" "}
                 {isCustom
                     ? "matching one of your filters for rickrolls."
